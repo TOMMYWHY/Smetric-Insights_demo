@@ -1,4 +1,7 @@
-> For this assessment we will be testing your ability to connect to a third-party API, Unleashed, and put that data to CSV, using Python.
+# Smetric-Insights Interview Coding Test
+
+
+
 
 > https://apidocs.unleashedsoftware.com/
 
