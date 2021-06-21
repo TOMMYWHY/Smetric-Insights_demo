@@ -47,7 +47,6 @@ digraph G {
 		<tr><td port="InvoiceLines" align="left" cellpadding="5">InvoiceLines <font color="grey60">object</font></td></tr>
 		<tr><td port="Guid" align="left" cellpadding="5">Guid <font color="grey60">object</font></td></tr>
 		<tr><td port="LastModifiedOn" align="left" cellpadding="5">LastModifiedOn <font color="grey60">datetime64[ns]</font></td></tr>
-		<tr><td port="Products_ProductCode" align="left" cellpadding="5">Products_ProductCode <font color="grey60">object</font></td></tr>
 		</table>>];
 
 	 SalesOrders [ label=<
@@ -173,6 +172,14 @@ digraph G {
 		<tr><td port="LastModifiedOn" align="left" cellpadding="5">LastModifiedOn <font color="grey60">datetime64[ns]</font></td></tr>
 		</table>>];
 
+	 UnitOfMeasures [ label=<
+        <table border="0" cellborder="1" cellspacing="0">
+        <tr><td bgcolor="skyblue"><b>UnitOfMeasures</b></td></tr>
+        
+		<tr><td port="Guid" align="left" cellpadding="5">Guid <font color="grey60">object</font></td></tr>
+		<tr><td port="Name" align="left" cellpadding="5">Name <font color="grey60">object</font></td></tr>
+		</table>>];
+
 	 Customers [ label=<
         <table border="0" cellborder="1" cellspacing="0">
         <tr><td bgcolor="skyblue"><b>Customers</b></td></tr>
@@ -221,15 +228,161 @@ digraph G {
 		<tr><td port="LastModifiedOn" align="left" cellpadding="5">LastModifiedOn <font color="grey60">datetime64[ns]</font></td></tr>
 		</table>>];
 
+	 Currency [ label=<
+        <table border="0" cellborder="1" cellspacing="0">
+        <tr><td bgcolor="skyblue"><b>Currency</b></td></tr>
+        
+		<tr><td port="CurrencyCode" align="left" cellpadding="5">CurrencyCode <font color="grey60">object</font></td></tr>
+		<tr><td port="Description" align="left" cellpadding="5">Description <font color="grey60">object</font></td></tr>
+		<tr><td port="Guid" align="left" cellpadding="5">Guid <font color="grey60">object</font></td></tr>
+		<tr><td port="LastModifiedOn" align="left" cellpadding="5">LastModifiedOn <font color="grey60">datetime64[ns]</font></td></tr>
+		</table>>];
+
+	 ProductGroups [ label=<
+        <table border="0" cellborder="1" cellspacing="0">
+        <tr><td bgcolor="skyblue"><b>ProductGroups</b></td></tr>
+        
+		<tr><td port="GroupName" align="left" cellpadding="5">GroupName <font color="grey60">object</font></td></tr>
+		<tr><td port="Guid" align="left" cellpadding="5">Guid <font color="grey60">object</font></td></tr>
+		<tr><td port="LastModifiedOn" align="left" cellpadding="5">LastModifiedOn <font color="grey60">datetime64[ns]</font></td></tr>
+		</table>>];
+
+	 DeliveryAddress [ label=<
+        <table border="0" cellborder="1" cellspacing="0">
+        <tr><td bgcolor="skyblue"><b>DeliveryAddress</b></td></tr>
+        
+		<tr><td port="InvoiceNumber" align="left" cellpadding="5">InvoiceNumber <font color="grey60">object</font></td></tr>
+		<tr><td port="OrderNumber" align="left" cellpadding="5">OrderNumber <font color="grey60">object</font></td></tr>
+		<tr><td port="QuoteNumber" align="left" cellpadding="5">QuoteNumber <font color="grey60">object</font></td></tr>
+		<tr><td port="InvoiceDate" align="left" cellpadding="5">InvoiceDate <font color="grey60">datetime64[ns]</font></td></tr>
+		<tr><td port="DueDate" align="left" cellpadding="5">DueDate <font color="grey60">datetime64[ns]</font></td></tr>
+		<tr><td port="InvoiceStatus" align="left" cellpadding="5">InvoiceStatus <font color="grey60">object</font></td></tr>
+		<tr><td port="Customer" align="left" cellpadding="5">Customer <font color="grey60">object</font></td></tr>
+		<tr><td port="Comments" align="left" cellpadding="5">Comments <font color="grey60">object</font></td></tr>
+		<tr><td port="PostalAddress" align="left" cellpadding="5">PostalAddress <font color="grey60">object</font></td></tr>
+		<tr><td port="DeliveryInstruction" align="left" cellpadding="5">DeliveryInstruction <font color="grey60">object</font></td></tr>
+		<tr><td port="SubTotal" align="left" cellpadding="5">SubTotal <font color="grey60">float64</font></td></tr>
+		<tr><td port="TaxTotal" align="left" cellpadding="5">TaxTotal <font color="grey60">float64</font></td></tr>
+		<tr><td port="Total" align="left" cellpadding="5">Total <font color="grey60">float64</font></td></tr>
+		<tr><td port="BCSubTotal" align="left" cellpadding="5">BCSubTotal <font color="grey60">float64</font></td></tr>
+		<tr><td port="BCTaxTotal" align="left" cellpadding="5">BCTaxTotal <font color="grey60">float64</font></td></tr>
+		<tr><td port="BCTotal" align="left" cellpadding="5">BCTotal <font color="grey60">float64</font></td></tr>
+		<tr><td port="CreatedBy" align="left" cellpadding="5">CreatedBy <font color="grey60">object</font></td></tr>
+		<tr><td port="PaymentTerm" align="left" cellpadding="5">PaymentTerm <font color="grey60">object</font></td></tr>
+		<tr><td port="InvoiceLines" align="left" cellpadding="5">InvoiceLines <font color="grey60">object</font></td></tr>
+		<tr><td port="Guid" align="left" cellpadding="5">Guid <font color="grey60">object</font></td></tr>
+		<tr><td port="LastModifiedOn" align="left" cellpadding="5">LastModifiedOn <font color="grey60">datetime64[ns]</font></td></tr>
+		</table>>];
+
+	 InvoiceLines [ label=<
+        <table border="0" cellborder="1" cellspacing="0">
+        <tr><td bgcolor="skyblue"><b>InvoiceLines</b></td></tr>
+        
+		<tr><td port="LineNumber" align="left" cellpadding="5">LineNumber <font color="grey60">object</font></td></tr>
+		<tr><td port="LineType" align="left" cellpadding="5">LineType <font color="grey60">object</font></td></tr>
+		<tr><td port="Product" align="left" cellpadding="5">Product <font color="grey60">object</font></td></tr>
+		<tr><td port="OrderQuantity" align="left" cellpadding="5">OrderQuantity <font color="grey60">float64</font></td></tr>
+		<tr><td port="InvoiceQuantity" align="left" cellpadding="5">InvoiceQuantity <font color="grey60">float64</font></td></tr>
+		<tr><td port="UnitPrice" align="left" cellpadding="5">UnitPrice <font color="grey60">float64</font></td></tr>
+		<tr><td port="DiscountRate" align="left" cellpadding="5">DiscountRate <font color="grey60">float64</font></td></tr>
+		<tr><td port="LineTotal" align="left" cellpadding="5">LineTotal <font color="grey60">float64</font></td></tr>
+		<tr><td port="Comments" align="left" cellpadding="5">Comments <font color="grey60">object</font></td></tr>
+		<tr><td port="TaxRate" align="left" cellpadding="5">TaxRate <font color="grey60">float64</font></td></tr>
+		<tr><td port="LineTax" align="left" cellpadding="5">LineTax <font color="grey60">float64</font></td></tr>
+		<tr><td port="BCUnitPrice" align="left" cellpadding="5">BCUnitPrice <font color="grey60">float64</font></td></tr>
+		<tr><td port="SerialNumbers" align="left" cellpadding="5">SerialNumbers <font color="grey60">object</font></td></tr>
+		<tr><td port="BatchNumbers" align="left" cellpadding="5">BatchNumbers <font color="grey60">object</font></td></tr>
+		<tr><td port="Guid" align="left" cellpadding="5">Guid <font color="grey60">object</font></td></tr>
+		<tr><td port="LastModifiedOn" align="left" cellpadding="5">LastModifiedOn <font color="grey60">datetime64[ns]</font></td></tr>
+		<tr><td port="Invoices_Guid" align="left" cellpadding="5">Invoices_Guid <font color="grey60">object</font></td></tr>
+		</table>>];
+
+	 Warehouses [ label=<
+        <table border="0" cellborder="1" cellspacing="0">
+        <tr><td bgcolor="skyblue"><b>Warehouses</b></td></tr>
+        
+		<tr><td port="WarehouseCode" align="left" cellpadding="5">WarehouseCode <font color="grey60">object</font></td></tr>
+		<tr><td port="WarehouseName" align="left" cellpadding="5">WarehouseName <font color="grey60">object</font></td></tr>
+		<tr><td port="IsDefault" align="left" cellpadding="5">IsDefault <font color="grey60">bool</font></td></tr>
+		<tr><td port="StreetNo" align="left" cellpadding="5">StreetNo <font color="grey60">object</font></td></tr>
+		<tr><td port="AddressLine1" align="left" cellpadding="5">AddressLine1 <font color="grey60">object</font></td></tr>
+		<tr><td port="AddressLine2" align="left" cellpadding="5">AddressLine2 <font color="grey60">object</font></td></tr>
+		<tr><td port="Suburb" align="left" cellpadding="5">Suburb <font color="grey60">object</font></td></tr>
+		<tr><td port="City" align="left" cellpadding="5">City <font color="grey60">object</font></td></tr>
+		<tr><td port="Region" align="left" cellpadding="5">Region <font color="grey60">object</font></td></tr>
+		<tr><td port="Country" align="left" cellpadding="5">Country <font color="grey60">object</font></td></tr>
+		<tr><td port="PostCode" align="left" cellpadding="5">PostCode <font color="grey60">object</font></td></tr>
+		<tr><td port="PhoneNumber" align="left" cellpadding="5">PhoneNumber <font color="grey60">object</font></td></tr>
+		<tr><td port="FaxNumber" align="left" cellpadding="5">FaxNumber <font color="grey60">object</font></td></tr>
+		<tr><td port="MobileNumber" align="left" cellpadding="5">MobileNumber <font color="grey60">object</font></td></tr>
+		<tr><td port="DDINumber" align="left" cellpadding="5">DDINumber <font color="grey60">object</font></td></tr>
+		<tr><td port="ContactName" align="left" cellpadding="5">ContactName <font color="grey60">object</font></td></tr>
+		<tr><td port="Obsolete" align="left" cellpadding="5">Obsolete <font color="grey60">bool</font></td></tr>
+		<tr><td port="Guid" align="left" cellpadding="5">Guid <font color="grey60">object</font></td></tr>
+		<tr><td port="LastModifiedOn" align="left" cellpadding="5">LastModifiedOn <font color="grey60">object</font></td></tr>
+		</table>>];
+
+	 SalesOrderLines [ label=<
+        <table border="0" cellborder="1" cellspacing="0">
+        <tr><td bgcolor="skyblue"><b>SalesOrderLines</b></td></tr>
+        
+		<tr><td port="LineNumber" align="left" cellpadding="5">LineNumber <font color="grey60">object</font></td></tr>
+		<tr><td port="LineType" align="left" cellpadding="5">LineType <font color="grey60">object</font></td></tr>
+		<tr><td port="Product" align="left" cellpadding="5">Product <font color="grey60">object</font></td></tr>
+		<tr><td port="DueDate" align="left" cellpadding="5">DueDate <font color="grey60">datetime64[ns]</font></td></tr>
+		<tr><td port="OrderQuantity" align="left" cellpadding="5">OrderQuantity <font color="grey60">float64</font></td></tr>
+		<tr><td port="UnitPrice" align="left" cellpadding="5">UnitPrice <font color="grey60">float64</font></td></tr>
+		<tr><td port="DiscountRate" align="left" cellpadding="5">DiscountRate <font color="grey60">float64</font></td></tr>
+		<tr><td port="LineTotal" align="left" cellpadding="5">LineTotal <font color="grey60">float64</font></td></tr>
+		<tr><td port="Volume" align="left" cellpadding="5">Volume <font color="grey60">object</font></td></tr>
+		<tr><td port="Weight" align="left" cellpadding="5">Weight <font color="grey60">object</font></td></tr>
+		<tr><td port="Comments" align="left" cellpadding="5">Comments <font color="grey60">object</font></td></tr>
+		<tr><td port="AverageLandedPriceAtTimeOfSale" align="left" cellpadding="5">AverageLandedPriceAtTimeOfSale <font color="grey60">float64</font></td></tr>
+		<tr><td port="TaxRate" align="left" cellpadding="5">TaxRate <font color="grey60">float64</font></td></tr>
+		<tr><td port="LineTax" align="left" cellpadding="5">LineTax <font color="grey60">float64</font></td></tr>
+		<tr><td port="XeroTaxCode" align="left" cellpadding="5">XeroTaxCode <font color="grey60">object</font></td></tr>
+		<tr><td port="BCUnitPrice" align="left" cellpadding="5">BCUnitPrice <font color="grey60">float64</font></td></tr>
+		<tr><td port="BCLineTotal" align="left" cellpadding="5">BCLineTotal <font color="grey60">float64</font></td></tr>
+		<tr><td port="BCLineTax" align="left" cellpadding="5">BCLineTax <font color="grey60">float64</font></td></tr>
+		<tr><td port="LineTaxCode" align="left" cellpadding="5">LineTaxCode <font color="grey60">object</font></td></tr>
+		<tr><td port="XeroSalesAccount" align="left" cellpadding="5">XeroSalesAccount <font color="grey60">object</font></td></tr>
+		<tr><td port="SerialNumbers" align="left" cellpadding="5">SerialNumbers <font color="grey60">object</font></td></tr>
+		<tr><td port="BatchNumbers" align="left" cellpadding="5">BatchNumbers <font color="grey60">object</font></td></tr>
+		<tr><td port="Guid" align="left" cellpadding="5">Guid <font color="grey60">object</font></td></tr>
+		<tr><td port="LastModifiedOn" align="left" cellpadding="5">LastModifiedOn <font color="grey60">datetime64[ns]</font></td></tr>
+		<tr><td port="SalesOrders_Guid" align="left" cellpadding="5">SalesOrders_Guid <font color="grey60">object</font></td></tr>
+		</table>>];
+
 	 Invoices:OrderNumber->SalesOrders:OrderNumber [ 
                         arrowhead=ocrow, arrowtail=none];
 
-	 Invoices:Customer->SalesOrders:Customer [ 
+	 Invoices:Customer->Customers:Guid [ 
                         arrowhead=ocrow, arrowtail=none];
 
-	 Invoices:Guid->Customers:Guid [ 
+	 Invoices:InvoiceNumber->DeliveryAddress:InvoiceNumber [ 
                         arrowhead=ocrow, arrowtail=none];
 
-	 Invoices:Products_ProductCode->Products:ProductCode [ 
+	 Invoices:Guid->InvoiceLines:Invoices_Guid [ 
+                        arrowhead=ocrow, arrowtail=none];
+
+	 InvoiceLines:Product->Products:Guid [ 
+                        arrowhead=ocrow, arrowtail=none];
+
+	 Products:UnitOfMeasure->UnitOfMeasures:Guid [ 
+                        arrowhead=ocrow, arrowtail=none];
+
+	 Products:ProductGroup->ProductGroups:Guid [ 
+                        arrowhead=ocrow, arrowtail=none];
+
+	 Customers:Currency->Currency:Guid [ 
+                        arrowhead=ocrow, arrowtail=none];
+
+	 SalesOrders:Customer->Customers:CustomerCode [ 
+                        arrowhead=ocrow, arrowtail=none];
+
+	 SalesOrders:Warehouse->Warehouses:WarehouseCode [ 
+                        arrowhead=ocrow, arrowtail=none];
+
+	 SalesOrders:Guid->SalesOrderLines:SalesOrders_Guid [ 
                         arrowhead=ocrow, arrowtail=none];
 	}
